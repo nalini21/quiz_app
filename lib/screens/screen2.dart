@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:quiz_app/models/option.dart';
 import 'package:quiz_app/models/question.dart';
@@ -102,108 +104,166 @@ class _QuizPageState extends State<QuizPage> {
       });
     }
 
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('Questions'),
-          elevation: 0,
-        ),
-        body: Center(
-          child: Stack(
-            children: <Widget>[
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  SizedBox(
-                    height: 70,
-                  ),
-                  Text(current_question),
-                  _buildCard(
-                      current_options[0].option_id,
-                      current_options[0].option_info,
-                      current_options[0].selected,
-                      toggle_option),
-                  _buildCard(
-                      current_options[1].option_id,
-                      current_options[1].option_info,
-                      current_options[1].selected,
-                      toggle_option),
-                  _buildCard(
-                      current_options[2].option_id,
-                      current_options[2].option_info,
-                      current_options[2].selected,
-                      toggle_option),
-                  _buildCard(
-                      current_options[3].option_id,
-                      current_options[3].option_info,
-                      current_options[3].selected,
-                      toggle_option),
-                  SizedBox(
-                    height: 70,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      RaisedButton(
-                        onPressed: () {
-                          previous_question();
-                        },
-                        child: Text('previous'),
+    return SafeArea(
+      child: Scaffold(
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+              leading: Icon(Icons.circle),
+              title: Text(
+                'Question $current_question_id',
+                style: TextStyle(
+                    fontSize: 24,
+                    fontFamily: 'Quicksand',
+                    fontWeight: FontWeight.bold),
+              )),
+          body: Center(
+            child: Stack(
+              children: <Widget>[
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 20, right: 20),
+                      child: Text(
+                        current_question,
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'Montserrat',
+                        ),
                       ),
-                      RaisedButton(
-                        onPressed: () {
-                          print('pressed next button');
-                          next_question();
-                          //print('pressed next button 2nd');
-                        },
-                        child: Text('next'),
-                      ),
-                    ],
-                  )
-                ],
-              )
-            ],
-          ),
-        ));
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    _buildCard(
+                        'A',
+                        current_options[0].option_id,
+                        current_options[0].option_info,
+                        current_options[0].selected,
+                        toggle_option),
+                    _buildCard(
+                        'B',
+                        current_options[1].option_id,
+                        current_options[1].option_info,
+                        current_options[1].selected,
+                        toggle_option),
+                    _buildCard(
+                        'C',
+                        current_options[2].option_id,
+                        current_options[2].option_info,
+                        current_options[2].selected,
+                        toggle_option),
+                    _buildCard(
+                        'D',
+                        current_options[3].option_id,
+                        current_options[3].option_info,
+                        current_options[3].selected,
+                        toggle_option),
+                    SizedBox(
+                      height: 100,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        RaisedButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                            //side: BorderSide(color: Colors.white)
+                          ),
+                          color: Colors.blueAccent,
+                          elevation: 10,
+                          onPressed: () {
+                            previous_question();
+                          },
+                          child: Text(
+                            'prev',
+                            style: TextStyle(
+                                fontFamily: 'Quicksand',
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        RaisedButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                            //side: BorderSide(color: Colors.white)
+                          ),
+                          color: Colors.blueAccent,
+                          elevation: 10,
+                          onPressed: () {
+                            next_question();
+                          },
+                          child: Text(
+                            'next',
+                            style: TextStyle(
+                                fontFamily: 'Quicksand',
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+          )),
+    );
   }
 
-  Widget _buildCard(
-      int option_id, String info, bool selected, Function toggle_option) {
+  Widget _buildCard(String name, int option_id, String info, bool selected,
+      Function toggle_option) {
     return FlatButton(
       onPressed: () {
         toggle_option(option_id, selected);
       },
-      child: Card(
-        color: selected ? Colors.green : Colors.white,
-        margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-        elevation: 20,
-        child: Row(
-          children: <Widget>[
-            Stack(children: <Widget>[
-              Container(
-                margin: EdgeInsets.only(left: 20.0, right: 20),
-                height: 30,
-                width: 30,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    border: Border.all(
-                        color: Colors.blue,
-                        style: BorderStyle.solid,
-                        width: 2)),
-              )
-            ]),
-            // SizedBox(height: 8.0),
-            Text(
-              '$info',
-              style: TextStyle(
-                //fontFamily: 'Quicksand',
-                fontWeight: FontWeight.bold,
-                fontSize: 55,
+      child: Container(
+        height: 80,
+        child: Card(
+          color: selected ? Colors.green : Colors.white,
+          margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          elevation: 20,
+          child: Row(
+            children: <Widget>[
+              Stack(children: <Widget>[
+                Container(
+                  child: Text(
+                    '$name',
+                    style: TextStyle(
+                      fontSize: selected ? 12 : 15,
+                      color: selected ? Colors.white : Colors.blue,
+                    ),
+                  ),
+                  margin: EdgeInsets.only(left: 20.0, right: 10),
+                  padding: EdgeInsets.fromLTRB(7, 4, 5, 5),
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      border: Border.all(
+                          color: selected ? Colors.white : Colors.blue,
+                          style: BorderStyle.solid,
+                          width: selected ? 4 : 3)),
+                )
+              ]),
+              Text(
+                '$info',
+                style: TextStyle(
+                  fontFamily: 'Quicksand',
+                  fontSize: 20,
+                  //fontFamily: 'Montserrat',
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-          ],
+              SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );

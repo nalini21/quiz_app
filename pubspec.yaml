@@ -70,3 +70,13 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat_Alternates/MontserratAlternates-SemiBold.ttf
+        - asset: assets/fonts/Montserrat_Alternates/MontserratAlternates-SemiBoldItalic.ttf
+    - family: Quicksand
+      fonts:
+        - asset: assets/fonts/Quicksand/Static/Quicksand-Medium.ttf
+        - asset: assets/fonts/Quicksand/Static/Quicksand-Bold.ttf
+          weight: 500

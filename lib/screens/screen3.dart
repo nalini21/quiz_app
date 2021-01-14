@@ -33,68 +33,68 @@ class _ResultPageState extends State<ResultPage> {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: <Widget>[
-                Card(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0)),
-                  child: ListTile(
-                    contentPadding: const EdgeInsets.all(16.0),
-                    title: Text("Total Questions"),
-                    trailing: Text('4'),
-                  ),
+                SizedBox(
+                  height: 40,
                 ),
-                SizedBox(height: 10.0),
-                Card(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0)),
-                  child: ListTile(
-                    contentPadding: const EdgeInsets.all(16.0),
-                    title: Text(
-                      "Score",
-                    ),
-                    trailing: Text(
-                      "20",
-                    ),
-                  ),
+                _buildItem(context, 'Score', 20),
+                SizedBox(
+                  height: 20,
                 ),
-                SizedBox(height: 10.0),
-                Card(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0)),
-                  child: ListTile(
-                    contentPadding: const EdgeInsets.all(16.0),
-                    title: Text("Correct Answers"),
-                    trailing: Text(
-                      "2",
-                    ),
-                  ),
+                _buildItem(context, 'Correct Answers', 2),
+                SizedBox(
+                  height: 20,
                 ),
-                SizedBox(height: 10.0),
-                Card(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0)),
-                  child: ListTile(
-                    contentPadding: const EdgeInsets.all(16.0),
-                    title: Text("Incorrect Answers"),
-                    trailing: Text(
-                      "2",
-                    ),
-                  ),
+                _buildItem(context, 'Incorrect Answers', 2),
+                SizedBox(
+                  height: 20,
                 ),
-                SizedBox(height: 30.0),
+                _buildItem(context, 'Total Questions', 4),
+                SizedBox(
+                  height: 100,
+                ),
                 RaisedButton(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 20.0),
+                        horizontal: 12.0, vertical: 12.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
-                    color: Theme.of(context).accentColor.withOpacity(0.7),
-                    child: Text("Home"),
+                    color: Colors.white,
+                    elevation: 10,
+                    child: Icon(
+                      Icons.home,
+                      color: Colors.blue,
+                      size: 40,
+                    ),
                     onPressed: () {
                       Navigator.pushNamed(context, '/home');
                     })
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildItem(BuildContext context, String name, int val) {
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+      child: ListTile(
+        contentPadding: const EdgeInsets.fromLTRB(16, 16, 30, 16),
+        title: Text(
+          "$name",
+          style: TextStyle(
+              fontFamily: 'Quicksand',
+              fontSize: 20,
+              fontWeight: FontWeight.bold),
+        ),
+        trailing: Text(
+          '$val',
+          style: TextStyle(
+              color: Colors.red,
+              fontFamily: 'Montserrat',
+              fontSize: 25,
+              fontWeight: FontWeight.bold),
         ),
       ),
     );

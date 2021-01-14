@@ -6,39 +6,39 @@ class QuestionsRepository {
     1: Question(
         1,
         [
-          Option(1, 'opt a'),
-          Option(2, 'opt b'),
-          Option(3, 'opt c'),
-          Option(4, 'opt d')
+          Option(1, 'Narendra Modi'),
+          Option(2, 'Rahul Gandhi'),
+          Option(3, 'Manmohan Singh'),
+          Option(4, 'Amit Shah')
         ],
-        'question 1'),
+        'Who is the current Prime Minister of India?'),
     2: Question(
         2,
         [
-          Option(5, 'opt a'),
-          Option(6, 'opt b'),
-          Option(7, 'opt c'),
-          Option(8, 'opt d')
+          Option(5, 'Mumbai'),
+          Option(6, 'Chennai'),
+          Option(7, 'New Delhi'),
+          Option(8, 'Kolkata')
         ],
-        'question 2'),
+        'What is the capital of India?'),
     3: Question(
         3,
         [
-          Option(9, 'opt a'),
-          Option(10, 'opt b'),
-          Option(11, 'opt c'),
-          Option(12, 'opt d')
+          Option(9, 'Mrichhakatika'),
+          Option(10, 'Ritusamhara'),
+          Option(11, 'Kumarasambhava'),
+          Option(12, 'Mudrarakshahsa')
         ],
-        'question 3'),
+        'Which among the following Kavya of Sanskrit, deal with court intrigues & access to power of Chandragupta Maurya?'),
     4: Question(
         4,
         [
-          Option(13, 'opt a'),
-          Option(14, 'opt b'),
-          Option(15, 'opt c'),
-          Option(16, 'opt d')
+          Option(13, 'Ashoka'),
+          Option(14, 'Chandragupta Maurya'),
+          Option(15, 'Kanishka'),
+          Option(16, 'Huvishka')
         ],
-        'question 4'),
+        'Who was the first Indian ruler who had territory outside India?'),
   };
   String get_question(int question_id) {
     return question_map[question_id].question_info;

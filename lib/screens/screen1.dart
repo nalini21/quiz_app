@@ -26,6 +26,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Quiz App'),
+          leading: GestureDetector(
+              onTap: () {
+                //Navigator.push(context,MaterialPageRoute(builder: (context) => About()));
+              },
+              child: Icon(Icons.menu)),
           elevation: 0,
         ),
         body: Center(
