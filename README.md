@@ -1,5 +1,4 @@
 # quiz_app
-<<<<<<< HEAD
 
 A new Flutter project.
 
