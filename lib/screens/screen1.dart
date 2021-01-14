@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
-import 'package:quiz_app/models/quiz.dart';
 import 'package:quiz_app/repositories/quiz_repository.dart';
-import 'package:quiz_app/screens/loading.dart';
 
 class HomePage extends StatefulWidget {
   @override

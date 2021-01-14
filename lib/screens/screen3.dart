@@ -3,7 +3,6 @@ import 'package:quiz_app/models/option.dart';
 import 'package:quiz_app/models/question.dart';
 import 'package:quiz_app/repositories/questions_repository.dart';
 import 'package:quiz_app/repositories/quiz_repository.dart';
-import 'package:quiz_app/screens/check.dart';
 import 'package:quiz_app/screens/screen2.dart';
 
 class ResultPage extends StatefulWidget {
