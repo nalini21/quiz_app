@@ -16,4 +16,4 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 =======
 quiz app in flutter
->>>>>>> 23ca13d2daf48a7d44b29eb4478e2d3f1412c89b
+23ca13d2daf48a7d44b29eb4478e2d3f1412c89b
