@@ -1,5 +1,5 @@
 # quiz_app
-
+<img src="assets/screen1a.jpg" height=400 class="center"></img>
 ![screen1a](assets/screen1a.jpg)
 ![screen1b](assets/screen1b.jpg)
 ![screen2a](assets/screen2a.jpg)
