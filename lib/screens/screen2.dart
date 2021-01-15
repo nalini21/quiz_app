@@ -1,13 +1,9 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:quiz_app/models/option.dart';
-import 'package:quiz_app/models/question.dart';
 import 'package:quiz_app/repositories/questions_repository.dart';
 import 'package:quiz_app/repositories/quiz_repository.dart';
 //import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
-import 'package:quiz_app/screens/screen3.dart';
-//import 'package:html_unescape/html_unescape.dart';
 
 class QuizPage extends StatefulWidget {
   @override

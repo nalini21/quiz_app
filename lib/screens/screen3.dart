@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/models/option.dart';
-import 'package:quiz_app/models/question.dart';
-import 'package:quiz_app/repositories/questions_repository.dart';
-import 'package:quiz_app/repositories/quiz_repository.dart';
-import 'package:quiz_app/screens/screen2.dart';
+// import 'package:quiz_app/models/option.dart';
+// import 'package:quiz_app/models/question.dart';
+// import 'package:quiz_app/repositories/questions_repository.dart';
+// import 'package:quiz_app/repositories/quiz_repository.dart';
+// import 'package:quiz_app/screens/screen2.dart';
 
 class ResultPage extends StatefulWidget {
   @override
