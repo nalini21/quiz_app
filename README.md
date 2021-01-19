@@ -1,8 +1,8 @@
 # quiz_app
-
-<img src="assets/ss1.png" width=300 class="center"></img>
-<img src="assets/ss2.png" width=300 class="center"></img>
-<img src="assets/ss3.png" width=300 class="center"></img>
+<img src="assets/ss0.png" width=400 class="center"></img>
+<img src="assets/ss1.png" width=400 class="center"></img>
+<img src="assets/ss2.png" width=400 class="center"></img>
+<img src="assets/ss3.png" width=400 class="center"></img>
 
 ## Getting Started
 This project is a starting point for a Flutter application.
