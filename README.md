@@ -1,7 +1,10 @@
 # quiz_app
 
-## Getting Started
+<img src="assets/ss1.png" width=300 class="center"></img>
+<img src="assets/ss2.png" width=300 class="center"></img>
+<img src="assets/ss3.png" width=300 class="center"></img>
 
+## Getting Started
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
